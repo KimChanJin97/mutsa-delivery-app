@@ -105,7 +105,7 @@ const HomePage = () => {
                     cursor="pointer"
                     _hover={{ backgroundColor: "blackAlpha.100" }}
                   >
-                    <Text>요리왕</Text>
+                    <Text>버거킹</Text>
                     <Text>19:30</Text>
                   </Flex>
                 </Flex>
