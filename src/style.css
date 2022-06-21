@@ -1,0 +1,45 @@
+#joinmodalwrap {
+    border: 5px solid black;
+    width: 900px;
+    height: 550px;
+
+    position: absolute;
+    top: 200px;
+    left: 200px;
+
+    background-color: #DAE0E9;
+
+    display: none;
+    text-align: center;
+
+}
+
+#joinmodalwrap h3{
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+#structure{
+    font-size: 30px;
+    margin-left: 35px;
+}
+
+#proceed{
+    margin-top: 35px;
+}
+
+#wait{
+   margin-top: 35px;
+}
+
+#joinmodalwrap Button{
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: 0;
+}
+#button_wrap{
+    display: flex;
+    justify-content: space-around;
+}

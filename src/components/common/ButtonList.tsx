@@ -33,6 +33,12 @@ const ButtonList = () => {
           size="lg"
           colorScheme="yellow"
           isDisabled={!!!auth.isLoggedIn}
+          onClick={()=>{
+            const modal=document.getElementById("joinmodalwrap");
+            if (modal != null){
+              modal.setAttribute("style", "display: flex");
+            }
+          }}
         >
           참여하기
         </Button>

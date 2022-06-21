@@ -5,6 +5,7 @@ import Header from "../components/common/Header";
 import ButtonList from "../components/common/ButtonList";
 import FloatHeader from "../components/common/FloatHeader";
 import SideBar from "../components/home/SideBar";
+import Joinmodal from "../components/Joinmodal";
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -122,6 +123,7 @@ const HomePage = () => {
 
           <FloatHeader />
           <ButtonList />
+          <Joinmodal />
         </Flex>
       </Flex>
     </>
