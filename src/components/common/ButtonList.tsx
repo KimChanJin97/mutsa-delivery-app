@@ -33,6 +33,7 @@ const ButtonList = () => {
           size="lg"
           colorScheme="yellow"
           isDisabled={!!!auth.isLoggedIn}
+          
           onClick={()=>{
             const modal=document.getElementById("joinmodalwrap");
             if (modal != null){

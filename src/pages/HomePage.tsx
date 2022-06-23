@@ -6,10 +6,16 @@ import ButtonList from "../components/common/ButtonList";
 import FloatHeader from "../components/common/FloatHeader";
 import SideBar from "../components/home/SideBar";
 import Joinmodal from "../components/Joinmodal";
+import Overlay from "../components/Overlay";
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [map, setMap] = useState<kakao.maps.Map | null>(null);
+
+  // 테스트 데이터
+  const [OrderData, setOrderData] = useState(["굽네치킨", "19:00", "고추바사삭", "18000원"]);
+
+  const [waitCheck, setWaitCheck] = useState(false);
 
   const [location, setLocation] = useState({
     lat: 37.610953,
@@ -48,6 +54,7 @@ const HomePage = () => {
 
   return (
     <>
+    <Joinmodal setWaitCheck = {setWaitCheck} setIsOpen = {setIsOpen} />
       <Flex w="full" h="full" justifyContent="space-between">
         <SideBar />
         <Flex flex="1" h="full" position="relative">
@@ -78,39 +85,7 @@ const HomePage = () => {
             >
               {/* MapMarker의 자식을 넣어줌으로 해당 자식이 InfoWindow로 만들어지게 합니다 */}
               {/* 인포윈도우에 표출될 내용으로 HTML 문자열이나 React Component가 가능합니다 */}
-              {isOpen && (
-                <Flex
-                  w="150px"
-                  alignItems="center"
-                  justifyContent="center"
-                  flexDirection="column"
-                >
-                  <Flex
-                    w="full"
-                    h="16"
-                    alignItems="center"
-                    justifyContent="center"
-                    flexDirection="column"
-                    cursor="pointer"
-                    _hover={{ backgroundColor: "blackAlpha.100" }}
-                  >
-                    <Text>북악루</Text>
-                    <Text>19:30</Text>
-                  </Flex>
-                  <Flex
-                    w="full"
-                    h="16"
-                    alignItems="center"
-                    justifyContent="center"
-                    flexDirection="column"
-                    cursor="pointer"
-                    _hover={{ backgroundColor: "blackAlpha.100" }}
-                  >
-                    <Text>버거킹</Text>
-                    <Text>19:30</Text>
-                  </Flex>
-                </Flex>
-              )}
+              {isOpen && <Overlay OrderData={OrderData} waitCheck={waitCheck}></Overlay>}
             </MapMarker>
             <Circle
               center={{
