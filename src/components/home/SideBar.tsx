@@ -11,6 +11,7 @@ const SideBar = () => {
           여기는 주소
         </Heading>
       </Box>
+      {/*
       <Flex justifyContent="space-between" mb="32">
         <Button size="lg" colorScheme="yellow">
           새 메뉴 작성
@@ -19,6 +20,7 @@ const SideBar = () => {
           메뉴 따라가기
         </Button>
       </Flex>
+    */}
       <Flex
         flex="1"
         pb="16"
