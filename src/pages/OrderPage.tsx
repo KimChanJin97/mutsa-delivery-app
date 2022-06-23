@@ -86,7 +86,7 @@ const OrderPage = () => {
           {auth.username}님 어떤 음식을 주문할건가요?
         </Heading>
 
-        <Flex alignItems="center" mb="4">
+        <Flex alignItems="center" mb="10">
           <Text w="20">음식점 명</Text>
           <Input
             w="400"
@@ -96,7 +96,7 @@ const OrderPage = () => {
           ></Input>
         </Flex>
 
-        <Flex alignItems="center" mb="4">
+        <Flex alignItems="center" mb="10">
           <Text w="20">주문 시간</Text>
           <Input
             w="400"
@@ -109,8 +109,8 @@ const OrderPage = () => {
 
         {items.map((item, index) => {
           return (
-            <Flex alignItems="center" mb="4" key={index}>
-              <Text w="20">메뉴{index + 1}</Text>
+            <Flex alignItems="center" mb="10" key={index}>
+              <Text w="20">메뉴 {index + 1}</Text>
               <Input
                 w="400"
                 mr="8"
@@ -144,7 +144,7 @@ const OrderPage = () => {
         >
           메뉴 추가
         </Button>
-        <Flex alignItems="center" my="4">
+        <Flex alignItems="center" my="10">
           <Text w="20" fontSize="2xl">
             총 합
           </Text>
@@ -154,18 +154,17 @@ const OrderPage = () => {
             }, 0)}
           </Text>
         </Flex>
-        <Button colorScheme="green" mr="4" onClick={onOpen}>등록 완료할까요?</Button>
+        <Button colorScheme="green" mr="10" onClick={onOpen}>등록 완료할까요?</Button>
         <Button colorScheme="red" onClick={onOpen}>등록 취소할까요?</Button>
       </Box>
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader id="modalContentHead">알림</ModalHeader>
-          <ModalCloseButton />
+          <ModalHeader id="modalContentHead">알림</ModalHeader><ModalCloseButton />
           <ModalBody id="modalContentBody">확실한가요?</ModalBody>
           <ModalFooter>
             <Button colorScheme="green" mr={3} onClick={onClose}>네</Button>
-            <Button colorScheme="red">아니요</Button>
+            <Button colorScheme="red" onClick={onClose}>아니요</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
