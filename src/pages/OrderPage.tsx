@@ -20,6 +20,8 @@ import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import authState from "../atoms/authState";
 import "../style.css";
+//import { Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface IItemType {
   name: string;
@@ -41,6 +43,8 @@ const OrderPage = () => {
   const [auth, setAuth] = useRecoilState(authState);
 
   const [store, setStore] = useState("");
+
+  //const [navigate, setNavigate] = useNavigate();
 
   const [time, setTime] = useState(
     new Date().getFullYear() +
@@ -163,7 +167,9 @@ const OrderPage = () => {
           <ModalHeader id="modalContentHead">알림</ModalHeader><ModalCloseButton />
           <ModalBody id="modalContentBody">확실한가요?</ModalBody>
           <ModalFooter>
+            <Link to="/">
             <Button colorScheme="green" mr={3} onClick={onClose}>네</Button>
+            </Link>
             <Button colorScheme="red" onClick={onClose}>아니요</Button>
           </ModalFooter>
         </ModalContent>
@@ -171,5 +177,6 @@ const OrderPage = () => {
     </>
   );
 };
+
 
 export default OrderPage;
