@@ -19,6 +19,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import authState from "../atoms/authState";
+import "../style.css";
 
 interface IItemType {
   name: string;
@@ -161,10 +162,9 @@ const OrderPage = () => {
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Alert</ModalHeader>
+          <ModalHeader id="modalContentHead">알림</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>확실한가요?</ModalBody>
-
+          <ModalBody id="modalContentBody">확실한가요?</ModalBody>
           <ModalFooter>
             <Button colorScheme="green" mr={3} onClick={onClose}>
               네

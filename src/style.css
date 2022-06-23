@@ -43,3 +43,11 @@
     display: flex;
     justify-content: space-around;
 }
+
+#modalContentHead{
+    text-align:center;
+}
+
+#modalContentBody{
+    text-align:center;
+}
